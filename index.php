@@ -130,7 +130,7 @@
                }
                fclose($cf);
              }
-             for ($i=1;$i<$maxcheckpoint;$i++) {
+             for ($i=1;$i<=$maxcheckpoint;$i++) {
                 if ( !array_key_exists($i,$cpavailarray)) {
                    echo " <div class=\"done\">$i</div> "; }
                 else {
