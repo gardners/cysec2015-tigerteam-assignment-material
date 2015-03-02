@@ -1,0 +1,12 @@
+#!/bin/csh -f
+
+foreach user (`cat /opt/local/checkpoints/data/checkpoints/topics/$1/students`)
+
+  echo -n ${user}" "
+  if (-e /opt/local/checkpoints/data/checkpoints/students/$user) then
+    grep $1 /opt/local/checkpoints/data/checkpoints/students/$user | cut -f2 -d ":" | sort -u | wc -l
+  else
+    echo "   0"
+  endif
+end
+
